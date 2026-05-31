@@ -1,0 +1,260 @@
+/* ── Section wrapper ───────────────────────────────────────────────────────── */
+.resistance-section {
+  position: relative;
+  background: #060606;
+  padding: 130px 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.res-bg-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* ── Container ─────────────────────────────────────────────────────────────── */
+.resistance-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+.res-eyebrow {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #E50914;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding: 6px 18px;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 100px;
+}
+
+.res-header h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: #fff;
+  letter-spacing: 4px;
+  line-height: 1;
+  margin: 0 0 16px;
+  text-shadow: 0 0 60px rgba(229, 9, 20, 0.3);
+}
+
+.res-header p {
+  color: #666;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  margin-bottom: 50px;
+}
+
+/* ── Form ──────────────────────────────────────────────────────────────────── */
+.res-form {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.res-input-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 380px;
+  min-width: 240px;
+}
+
+.res-input-prefix {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #E50914;
+  font-size: 1.4rem;
+  font-family: 'Courier New', monospace;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.res-input {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  padding: 18px 52px 18px 42px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  box-sizing: border-box;
+}
+
+.res-input::placeholder {
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+
+.res-input:focus {
+  border-color: rgba(229, 9, 20, 0.6);
+  background: rgba(229, 9, 20, 0.04);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.08);
+}
+
+.res-char-count {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.2);
+}
+
+.res-generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #E50914;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 32px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 24px rgba(229, 9, 20, 0.3);
+  white-space: nowrap;
+}
+
+.res-generate-btn:hover:not(:disabled) {
+  background: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(229, 9, 20, 0.45);
+}
+
+.res-generate-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* ── Preview ───────────────────────────────────────────────────────────────── */
+.res-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.canvas-glow-wrap {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.canvas-glow-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #E50914, #8b0000, #E50914);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.canvas-glow-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 30px;
+  background: radial-gradient(ellipse, rgba(229,9,20,0.2) 0%, transparent 70%);
+  z-index: -2;
+  filter: blur(20px);
+}
+
+.res-canvas {
+  display: block;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ── Download button ───────────────────────────────────────────────────────── */
+.res-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.res-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 14px 36px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.res-download-btn:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+}
+
+.res-hint {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .resistance-section {
+    padding: 80px 20px;
+  }
+  .res-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .res-input-wrap {
+    max-width: 100%;
+  }
+  .res-generate-btn {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,11 @@
+.app-content {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.app-content.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 100vh;
+  overflow: hidden;
+}

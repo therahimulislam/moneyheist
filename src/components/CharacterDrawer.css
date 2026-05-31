@@ -1,0 +1,135 @@
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 8000;
+}
+
+.character-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(480px, 100vw);
+  height: 100vh;
+  background: #0d0d0d;
+  z-index: 8001;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.8);
+}
+
+.character-drawer.deceased {
+  border-left: 3px solid #660000;
+}
+
+.character-drawer.alive {
+  border-left: 3px solid #E50914;
+}
+
+.drawer-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+  transition: background 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-close:hover {
+  background: #E50914;
+  border-color: #E50914;
+}
+
+.drawer-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.drawer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.drawer-image-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to top, #0d0d0d, transparent);
+}
+
+.drawer-body {
+  padding: 30px;
+  flex: 1;
+}
+
+.drawer-status-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.badge-alive {
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid #E50914;
+  color: #E50914;
+}
+
+.badge-deceased {
+  background: rgba(80, 0, 0, 0.3);
+  border: 1px solid #660000;
+  color: #aa4444;
+}
+
+.drawer-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.drawer-role {
+  font-size: 1rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+.drawer-quote {
+  border-left: 3px solid #E50914;
+  padding-left: 20px;
+  margin: 0 0 28px 0;
+  font-style: italic;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.drawer-desc {
+  color: #999;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
