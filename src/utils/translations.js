@@ -153,6 +153,7 @@ export const translations = {
     },
     footer: {
       copyright: '© 2026 Money Heist. All rights reserved.',
+      madeBy: 'Made with ❤️ by Rahimul',
       join: 'Join the Resistance'
     },
     vault: {
@@ -355,6 +356,7 @@ export const translations = {
     },
     footer: {
       copyright: '© 2026 La Casa de Papel. Todos los derechos reservados.',
+      madeBy: 'Hecho con ❤️ por Rahimul',
       join: 'Únete a la Resistencia'
     },
     vault: {

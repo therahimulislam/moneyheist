@@ -25,6 +25,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>{t.footer.copyright}</p>
+        <p style={{ marginTop: '10px', fontSize: '0.9rem', color: '#E50914' }}>{t.footer.madeBy}</p>
       </div>
     </footer>
   );

@@ -22,7 +22,7 @@ const AudioToggle = () => {
     <div className="audio-toggle-container" onClick={toggleAudio}>
       <audio 
         ref={audioRef} 
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" 
+        src={import.meta.env.BASE_URL + 'audio/My-Life-Is-Going-On.mp3'} 
         loop 
       />
       <div className={`equalizer ${isPlaying ? 'playing' : ''}`}>
